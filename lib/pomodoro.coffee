@@ -11,15 +11,15 @@ module.exports =
     console.log "pomodoro: start"
     console.log "muted: #{@ticktack.loop}, volume: #{@ticktack.volume}, loop: #{@ticktack.loop}"
 
-    @ticktack.play
+    @ticktack.play()
     @timer = setTimeout ( => @finish() ), 25 * 60 * 1000
 
   stop: ->
     console.log "pomodoro: stop"
-    @ticktack.stop
+    @ticktack.stop()
     clearTimeout @timer
 
   finish: ->
     console.log "pomodoro: finish"
     @stop()
-    @bell.play
+    @bell.play()
