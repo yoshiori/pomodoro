@@ -4,7 +4,6 @@ module.exports =
     atom.workspaceView.command "pomodoro:stop", => @stop()
     @ticktack = new Audio('https://raw.githubusercontent.com/yoshiori/pomodoro/master/resources/ticktack.ogg')
     @bell = new Audio('https://raw.githubusercontent.com/yoshiori/pomodoro/master/resources/bell.ogg')
-
     @ticktack.loop = true
 
   start: ->
@@ -12,7 +11,7 @@ module.exports =
     console.log "muted: #{@ticktack.loop}, volume: #{@ticktack.volume}, loop: #{@ticktack.loop}"
 
     @ticktack.play()
-    @timer = setTimeout ( => @finish() ), 60 * 1000
+    @timer = setTimeout ( => @finish() ), 25 * 60 * 1000
 
   stop: ->
     console.log "pomodoro: stop"
