@@ -1,10 +1,10 @@
 {
   "name": "pomodoro",
   "main": "./lib/pomodoro",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simple pomodoro timer",
   "activationEvents": ["pomodoro:start","pomodoro:stop"],
-  "repository": "https://github.com/atom/pomodoro",
+  "repository": "https://github.com/yoshiori/pomodoro",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"

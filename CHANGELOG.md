@@ -1,3 +1,6 @@
 ## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+* Pomodoro timer.
+  * Add event.
+    * start
+    * finish
+    * stop 
