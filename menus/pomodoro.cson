@@ -1,0 +1,12 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'pomodoro'
+      'submenu': [
+        { 'label': 'start', 'command': 'pomodoro:start' }
+        { 'label': 'stop', 'command': 'pomodoro:stop' }
+      ]
+    ]
+  }
+]
