@@ -5,7 +5,7 @@
   "description": "Simple pomodoro timer",
   "activationEvents": [
     "pomodoro:start",
-    "pomodoro:stop"
+    "pomodoro:abort"
   ],
   "repository": "https://github.com/yoshiori/pomodoro",
   "license": "MIT",

@@ -14,7 +14,7 @@ The time management technique. For more information, [click here](http://pomodor
 The following commands are available for you to remap and/or run via the command palette.
 
 * `pomodoro:start` - Start timer
-* `pomodoro:stop` - Abort timer
+* `pomodoro:abort` - Abort timer
 
 ## Contributing
 

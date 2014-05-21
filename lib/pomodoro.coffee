@@ -1,7 +1,7 @@
 module.exports =
   activate: ->
     atom.workspaceView.command "pomodoro:start", => @start()
-    atom.workspaceView.command "pomodoro:stop", => @stop()
+    atom.workspaceView.command "pomodoro:abort", => @abort()
     @ticktack = new Audio(require("../resources/ticktack").data())
     @bell = new Audio(require("../resources/bell").data())
     @ticktack.loop = true
@@ -12,12 +12,12 @@ module.exports =
     @ticktack.play()
     @timer = setTimeout ( => @finish() ), 25 * 60 * 1000
 
-  stop: ->
-    console.log "pomodoro: stop"
+  abort: ->
+    console.log "pomodoro: abort"
     @ticktack.pause()
     clearTimeout @timer
 
   finish: ->
     console.log "pomodoro: finish"
-    @stop()
+    @ticktack.pause()
     @bell.play()
