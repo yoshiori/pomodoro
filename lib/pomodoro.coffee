@@ -2,14 +2,13 @@ module.exports =
   activate: ->
     atom.workspaceView.command "pomodoro:start", => @start()
     atom.workspaceView.command "pomodoro:stop", => @stop()
-    @ticktack = new Audio('https://raw.githubusercontent.com/yoshiori/pomodoro/master/resources/ticktack.ogg')
-    @bell = new Audio('https://raw.githubusercontent.com/yoshiori/pomodoro/master/resources/bell.ogg')
+    @ticktack = new Audio(require("../resources/ticktack").data())
+    @bell = new Audio(require("../resources/bell").data())
     @ticktack.loop = true
 
   start: ->
     console.log "pomodoro: start"
     console.log "muted: #{@ticktack.loop}, volume: #{@ticktack.volume}, loop: #{@ticktack.loop}"
-
     @ticktack.play()
     @timer = setTimeout ( => @finish() ), 25 * 60 * 1000
 
