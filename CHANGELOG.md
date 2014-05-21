@@ -1,3 +1,6 @@
+## 0.3.0 - First atom package Release
+* Support Execute Command.
+
 ## 0.2.0 - First atom package Release
 * Publish https://atom.io/packages/pomodoro
 

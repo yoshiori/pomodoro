@@ -2,7 +2,7 @@
 
 Pomodoro is an Atom package that is simple timer for Pomodoro Technique.
 
-# Pomodoro Technique?
+## Pomodoro Technique?
 The time management technique. For more information, [click here](http://pomodorotechnique.com/).
 
 ## Installation
@@ -15,6 +15,21 @@ The following commands are available for you to remap and/or run via the command
 
 * `pomodoro:start` - Start timer
 * `pomodoro:abort` - Abort timer
+
+### Set Execute Command
+
+![](https://www.evernote.com/shard/s4/sh/5bd4dd38-3eb4-41c5-a8db-a6fb97f2dbe3/d41b10d4d482748a14c40e0590f9a321/deep/0/Settings----Users-yoshiori-.atom-packages-pomodoro.png)
+
+#### for example
+
+1. Create Shell Script file. Set file permission 755.
+```sh
+#!/bin/sh
+/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend  
+```
+2. Set Shell Script file path to `Path to Execute With Timer Finish`
+
+3. Pomodoro finish -> suspend computer.
 
 ## Contributing
 
