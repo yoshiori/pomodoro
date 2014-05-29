@@ -32,8 +32,13 @@ class PomodoroTimer
     if time <= 0
       @finish()
     else
-      @status = "#{Math.floor(time / 60)}:#{Math.floor(time % 60)}"
+      min = @zeroPadding(Math.floor(time / 60))
+      sec = @zeroPadding(Math.floor(time % 60))
+      @status = "#{min}:#{sec}"
       @updateCallback(@status)
+
+  zeroPadding: (num) ->
+    ("0" + num).slice(-2)
 
   setUpdateCallback: (fn) ->
     @updateCallback = fn
