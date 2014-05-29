@@ -24,14 +24,16 @@ The following commands are available for you to remap and/or run via the command
 
 #### for example
 
-1. Create Shell Script file. Set file permission 755.
+- Create Shell Script file. Set file permission 755.
+
 ```sh
 #!/bin/sh
 /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend  
 ```
-2. Set Shell Script file path to `Path to Execute With Timer Finish`
 
-3. Pomodoro finish -> suspend computer.
+- Set Shell Script file path to `Path to Execute With Timer Finish`
+
+- Pomodoro finish -> suspend computer.
 
 ## Contributing
 
