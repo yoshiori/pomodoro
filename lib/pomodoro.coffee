@@ -1,5 +1,6 @@
 {exec, child} = require 'child_process'
 PomodoroTimer = require './pomodoro-timer'
+PomodoroView = require './pomodoro-view'
 
 module.exports =
   configDefaults:
@@ -11,6 +12,8 @@ module.exports =
     atom.workspaceView.command "pomodoro:start", => @start()
     atom.workspaceView.command "pomodoro:abort", => @abort()
     @timer = new PomodoroTimer()
+    @view = new PomodoroView(@timer)
+    atom.workspaceView.statusBar.prependRight(@view)
 
   start: ->
     console.log "pomodoro: start"
@@ -33,3 +36,7 @@ module.exports =
         if stderr
           console.log stderr
         console.log stdout
+
+  deactivate: ->
+    @view?.destroy()
+    @view = null

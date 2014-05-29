@@ -4,26 +4,28 @@ class PomodoroTimer
   TIME = 25 * 60 * 1000
 
   constructor: ->
-    console.log "pomodoro timer constructor"
     @ticktack = new Audio(require("../resources/ticktack").data())
     @bell = new Audio(require("../resources/bell").data())
     @ticktack.loop = true
 
-  start:->
+  start: ->
     @ticktack.play()
     @startTime = new Date()
     @timer = setInterval ( => @step() ), 1000
 
   abort: ->
-    @ticktack.pause()
-    clearTimeout @timer
     @status = "aborted (#{new Date()})"
+    @stop()
 
   finish: ->
+    @status = "finished (#{new Date()})"
+    @stop()
+    @bell.play()
+
+  stop: ->
     @ticktack.pause()
     clearTimeout @timer
-    @bell.play()
-    @status = "finished (#{new Date()})"
+    @updateCallback(@status)
 
   step: ->
     time = (TIME - (new Date() - @startTime)) / 1000
@@ -31,4 +33,7 @@ class PomodoroTimer
       @finish()
     else
       @status = "#{Math.floor(time / 60)}:#{Math.floor(time % 60)}"
-    console.log @status
+      @updateCallback(@status)
+
+  setUpdateCallback: (fn) ->
+    @updateCallback = fn
