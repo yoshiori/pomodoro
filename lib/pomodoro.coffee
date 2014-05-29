@@ -1,4 +1,6 @@
 {exec, child} = require 'child_process'
+PomodoroTimer = require './pomodoro-timer'
+
 module.exports =
   configDefaults:
     pathToExecuteWithTimerStart: ""
@@ -8,29 +10,22 @@ module.exports =
   activate: ->
     atom.workspaceView.command "pomodoro:start", => @start()
     atom.workspaceView.command "pomodoro:abort", => @abort()
-    @ticktack = new Audio(require("../resources/ticktack").data())
-    @bell = new Audio(require("../resources/bell").data())
-    @ticktack.loop = true
+    @timer = new PomodoroTimer()
 
   start: ->
     console.log "pomodoro: start"
-    console.log "muted: #{@ticktack.loop}, volume: #{@ticktack.volume}, loop: #{@ticktack.loop}"
-    @ticktack.play()
-    @timer = setTimeout ( => @finish() ), 25 * 60 * 1000
+    @timer.start()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerStart")
 
   abort: ->
     console.log "pomodoro: abort"
-    @ticktack.pause()
-    clearTimeout @timer
+    @timer.abort()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerAbort")
 
   finish: ->
     console.log "pomodoro: finish"
-    @ticktack.pause()
-    @bell.play()
+    @timer.finish()
     setTimeout ( => @exec(atom.config.get("pomodoro.pathToExecuteWithTimerFinish")) ), 2 * 1000
-
 
   exec: (path) ->
     if path
