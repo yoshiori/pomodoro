@@ -2,6 +2,8 @@
 
 Pomodoro is an Atom package that is simple timer for Pomodoro Technique.
 
+![](https://www.evernote.com/shard/s4/sh/834d812b-b56d-4f51-b872-9f42591f62a1/892711b9985511ebc91056e5ffef0d4e/deep/0/README.md----Users-yoshiori-shoji-.atom-packages-pomodoro-%E3%81%A8-Atom.png)
+
 ## Pomodoro Technique?
 The time management technique. For more information, [click here](http://pomodorotechnique.com/).
 
