@@ -1,3 +1,6 @@
+## 0.4.2 - Update
+* Support play sounds option.
+
 ## 0.4.0 - Update
 * Add Pomodoro Timer view.
 

@@ -9,7 +9,8 @@ class PomodoroTimer
     @ticktack.loop = true
 
   start: ->
-    @ticktack.play()
+    if atom.config.get("pomodoro.playSounds")
+      @ticktack.play()
     @startTime = new Date()
     @timer = setInterval ( => @step() ), 1000
 
@@ -20,7 +21,8 @@ class PomodoroTimer
   finish: ->
     @status = "finished (#{new Date()})"
     @stop()
-    @bell.play()
+    if atom.config.get("pomodoro.playSounds")
+      @bell.play()
 
   stop: ->
     @ticktack.pause()

@@ -7,6 +7,7 @@ module.exports =
     pathToExecuteWithTimerStart: ""
     pathToExecuteWithTimerAbort: ""
     pathToExecuteWithTimerFinish: ""
+    playSounds: true
 
   activate: ->
     atom.workspaceView.command "pomodoro:start", => @start()
