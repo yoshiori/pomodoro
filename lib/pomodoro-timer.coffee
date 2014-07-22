@@ -1,5 +1,7 @@
+events = require 'events'
+
 module.exports =
-class PomodoroTimer
+class PomodoroTimer extends events.EventEmitter
 
   TIME = 25 * 60 * 1000
 
@@ -32,7 +34,7 @@ class PomodoroTimer
   step: ->
     time = (TIME - (new Date() - @startTime)) / 1000
     if time <= 0
-      @finish()
+      @emit 'finished'
     else
       min = @zeroPadding(Math.floor(time / 60))
       sec = @zeroPadding(Math.floor(time % 60))
