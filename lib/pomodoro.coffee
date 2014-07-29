@@ -14,6 +14,7 @@ module.exports =
     atom.workspaceView.command "pomodoro:abort", => @abort()
     @timer = new PomodoroTimer()
     @view = new PomodoroView(@timer)
+    @timer.on 'finished', => @finish()
     atom.workspaceView.statusBar.prependRight(@view)
 
   start: ->
@@ -29,7 +30,7 @@ module.exports =
   finish: ->
     console.log "pomodoro: finish"
     @timer.finish()
-    setTimeout ( => @exec(atom.config.get("pomodoro.pathToExecuteWithTimerFinish")) ), 2 * 1000
+    @exec atom.config.get("pomodoro.pathToExecuteWithTimerFinish")
 
   exec: (path) ->
     if path
