@@ -10,12 +10,16 @@ module.exports =
     playSounds: true
 
   activate: ->
-    atom.workspaceView.command "pomodoro:start", => @start()
-    atom.workspaceView.command "pomodoro:abort", => @abort()
+    atom.commands.add "atom-workspace",
+      "pomodoro:start": =>  @start(),
+      "pomodoro:abort": => @abort()
+
     @timer = new PomodoroTimer()
-    @view = new PomodoroView(@timer)
     @timer.on 'finished', => @finish()
-    atom.workspaceView.statusBar.prependRight(@view)
+
+  consumeStatusBar: (statusBar) ->
+    @view = new PomodoroView(@timer)
+    statusBar.addRightTile(item: @view, priority: 100)
 
   start: ->
     console.log "pomodoro: start"
