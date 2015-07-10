@@ -3,11 +3,19 @@ PomodoroTimer = require './pomodoro-timer'
 PomodoroView = require './pomodoro-view'
 
 module.exports =
-  configDefaults:
-    pathToExecuteWithTimerStart: ""
-    pathToExecuteWithTimerAbort: ""
-    pathToExecuteWithTimerFinish: ""
-    playSounds: true
+  config:
+    pathToExecuteWithTimerStart:
+      type: "string"
+      default: ""
+    pathToExecuteWithTimerAbort:
+      type: "string"
+      default: ""
+    pathToExecuteWithTimerFinish:
+      type: "string"
+      default: ""
+    playSounds:
+      type: "boolean"
+      default: true
 
   activate: ->
     atom.commands.add "atom-workspace",
@@ -19,7 +27,7 @@ module.exports =
 
   consumeStatusBar: (statusBar) ->
     @view = new PomodoroView(@timer)
-    statusBar.addRightTile(item: @view, priority: 100)
+    statusBar.addRightTile(item: @view, priority: 200)
 
   start: ->
     console.log "pomodoro: start"
