@@ -3,10 +3,12 @@
   "main": "./lib/pomodoro",
   "version": "0.4.3",
   "description": "Simple pomodoro timer",
-  "activationEvents": [
-    "pomodoro:start",
-    "pomodoro:abort"
-  ],
+  "activationCommands": {
+    "atom-workspace": [
+      "pomodoro:start",
+      "pomodoro:abort"
+    ]
+  },
   "repository": "https://github.com/yoshiori/pomodoro",
   "license": "MIT",
   "engines": {
