@@ -4,6 +4,9 @@ PomodoroView = require './pomodoro-view'
 
 module.exports =
   config:
+    period:
+      type: "integer"
+      default: 25
     pathToExecuteWithTimerStart:
       type: "string"
       default: ""
