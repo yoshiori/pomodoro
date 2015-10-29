@@ -1,3 +1,6 @@
+## 1.0.0
+* Adds a settings option for configuring pomodoro period by [alehander42](https://github.com/alehander42).
+
 ## 0.4.2 - Update
 * Support play sounds option.
 
