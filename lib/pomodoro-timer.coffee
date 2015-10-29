@@ -3,7 +3,6 @@ events = require 'events'
 module.exports =
 class PomodoroTimer extends events.EventEmitter
 
-  TIME = 25 * 60 * 1000
 
   constructor: ->
     @ticktack = new Audio(require("../resources/ticktack").data())
@@ -14,11 +13,15 @@ class PomodoroTimer extends events.EventEmitter
     if atom.config.get("pomodoro.playSounds")
       @ticktack.play()
     @startTime = new Date()
+    @minutes = atom.config.get("pomodoro.period")
     @timer = setInterval ( => @step() ), 1000
 
   abort: ->
     @status = "aborted (#{new Date()})"
     @stop()
+
+  time: ->
+    @minutes * 60 * 1000
 
   finish: ->
     @status = "finished (#{new Date()})"
@@ -32,7 +35,7 @@ class PomodoroTimer extends events.EventEmitter
     @updateCallback(@status)
 
   step: ->
-    time = (TIME - (new Date() - @startTime)) / 1000
+    time = (@time() - (new Date() - @startTime)) / 1000
     if time <= 0
       @emit 'finished'
     else
