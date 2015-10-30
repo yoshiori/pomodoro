@@ -1,8 +1,8 @@
-# Pomodoro  - Atom package *Beta*
+# Pomodoro  - Atom package
 
 Pomodoro is an Atom package that is simple timer for Pomodoro Technique.
 
-![](https://www.evernote.com/shard/s4/sh/834d812b-b56d-4f51-b872-9f42591f62a1/892711b9985511ebc91056e5ffef0d4e/deep/0/README.md----Users-yoshiori-shoji-.atom-packages-pomodoro-%E3%81%A8-Atom.png)
+![](https://cloud.githubusercontent.com/assets/78609/10839658/dfc081e0-7f19-11e5-8eb1-73e638279c49.png)
 
 ## Pomodoro Technique?
 The time management technique. For more information, [click here](http://pomodorotechnique.com/).
@@ -20,7 +20,7 @@ The following commands are available for you to remap and/or run via the command
 
 ### Set Execute Command
 
-![](https://www.evernote.com/shard/s4/sh/5bd4dd38-3eb4-41c5-a8db-a6fb97f2dbe3/d41b10d4d482748a14c40e0590f9a321/deep/0/Settings----Users-yoshiori-.atom-packages-pomodoro.png)
+![](https://cloud.githubusercontent.com/assets/78609/10839670/121eeef6-7f1a-11e5-98b5-d441bdd321b0.png)
 
 #### for example
 
