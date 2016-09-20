@@ -16,9 +16,13 @@ module.exports =
     pathToExecuteWithTimerFinish:
       type: "string"
       default: ""
-    playSounds:
+    playTicks:
       type: "boolean"
       default: true
+    playBell:
+      type: "boolean"
+      default: true
+
 
   activate: ->
     atom.commands.add "atom-workspace",
