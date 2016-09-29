@@ -10,7 +10,7 @@ class PomodoroTimer extends events.EventEmitter
     @ticktack.loop = true
 
   start: ->
-    if atom.config.get("pomodoro.playSounds")
+    if atom.config.get("pomodoro.playTicks")
       @ticktack.play()
     @startTime = new Date()
     @minutes = atom.config.get("pomodoro.period")
@@ -26,7 +26,7 @@ class PomodoroTimer extends events.EventEmitter
   finish: ->
     @status = "finished (#{new Date()})"
     @stop()
-    if atom.config.get("pomodoro.playSounds")
+    if atom.config.get("pomodoro.playBell")
       @bell.play()
 
   stop: ->
