@@ -1,7 +1,7 @@
 {
   "name": "pomodoro",
   "main": "./lib/pomodoro",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Simple pomodoro timer",
   "activationCommands": {
     "atom-workspace": [
