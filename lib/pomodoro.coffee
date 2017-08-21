@@ -38,6 +38,10 @@ module.exports =
 
   start: ->
     console.log "pomodoro: start"
+    atom.notifications.addWarning("Your work time started!",
+      description: "Get to work!"
+      icon: "clock"
+    )
     @timer.start()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerStart")
 
@@ -48,6 +52,10 @@ module.exports =
 
   finish: ->
     console.log "pomodoro: finish"
+    atom.notifications.addSuccess("Phew!... You're done!",
+      description: "Take a short break."
+      icon: "clock"
+    )
     @timer.finish()
     @exec atom.config.get("pomodoro.pathToExecuteWithTimerFinish")
 
